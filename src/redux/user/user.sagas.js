@@ -19,6 +19,7 @@ import {
 } from '../../firebase/firebase.utils';
 
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
+  console.log('hit getsnap');
   try {
     const userRef = yield call(
       createUserProfileDocument,
@@ -43,7 +44,9 @@ export function* signInWithGoogle() {
 
 export function* signInWithEmail({ payload: { email, password } }) {
   try {
+    console.log('hit', email, password);
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
+    console.log('hit', user);
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
