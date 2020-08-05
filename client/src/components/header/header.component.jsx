@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-// import { auth } from '../../firebase/firebase.utils';
 import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
@@ -21,10 +20,10 @@ import {
 const signInSignOutLink = (currentUser, action) => {
   return currentUser ? (
     <OptionLink as='div' onClick={action}>
-      SIGN OUT
+      sign out
     </OptionLink>
   ) : (
-    <OptionLink to='/signin'>SIGN IN</OptionLink>
+    <OptionLink to='/signin'>sign in</OptionLink>
   );
 };
 
@@ -34,8 +33,8 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
       <Logo className='logo /' />
     </LogoContainer>
     <OptionsContainer>
-      <OptionLink to='/shop'>SHOP</OptionLink>
-      <OptionLink to='/contact'>CONTACT</OptionLink>
+      <OptionLink to='/shop'>shop</OptionLink>
+      <OptionLink to='/contact'>contact</OptionLink>
       {signInSignOutLink(currentUser, signOutStart)}
       <CartIcon />
     </OptionsContainer>
