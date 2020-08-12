@@ -38,7 +38,7 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     <SignInContainer>
       <SignInTitle>I already have an account</SignInTitle>
       <span>Sign in with your email and password</span>
-      <form name='contact' method='POST' data-netlify='true'>
+      <form onSubmit={handleSubmit}>
         <FormInput
           name='email'
           type='email'
