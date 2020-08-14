@@ -2,11 +2,13 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.div`
+  position: absolute;
+  top: 0;
   height: 70px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  z-index: 10;
 
   @media screen and (max-width: 800px) {
     height: 60px;
@@ -32,6 +34,9 @@ export const OptionsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-right: 2rem;
+  font-size: 1.8rem;
+  filter: invert();
 
   @media screen and (max-width: 800px) {
     width: 80%;
