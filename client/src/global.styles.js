@@ -1,6 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
+  :root {
+    --color-primary-light: hsl(24 50% 63% / 1);
+    --color-primary: hsl(24 50% 43% / 1);
+    --color-primary-dark: hsl(24 50% 23% / 1);
+
+    --color-header-dark: hsl(12deg 71% 3% / 1);
+  }
+
   * {
     margin: 0;
     padding: 0;
@@ -15,10 +23,6 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.6rem;
     font-family: 'Open Sans', sans-serif;
     background-color:#F7F0ED;
-
-    @media screen and (max-width: 800px) {
-      padding: 10px;
-    }
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -1,33 +1,62 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const FooterContainer = styled.footer`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
   height: 25rem;
   background-color: #28150e;
   color: #fcf9f8;
   margin-top: 2rem;
   padding: 3rem 0;
 
-  & div {
-    display: flex;
-    flex-direction: column;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 5rem;
+    justify-items: center;
+    height: unset;
+  }
 
-    h4 {
-      font-size: 1.6rem;
-      text-transform: uppercase;
-    }
+  hr {
+    width: 30%;
+    margin: 1rem 0;
+  }
+`;
 
-    hr {
-      width: 30%;
-      margin: 1rem 0;
-    }
+export const NavContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
-    a {
-      font-size: 1.4rem;
-      padding: 0.25rem 0;
-      text-transform: capitalize;
-    }
+export const Title = styled.h4`
+  font-size: 1.6rem;
+  text-transform: uppercase;
+`;
+
+export const NavList = styled.ul`
+  li {
+    list-style: none;
+  }
+
+  a {
+    font-size: 1.4rem;
+    padding: 0.25rem 0;
+    text-transform: capitalize;
+  }
+`;
+
+export const LogoContainer = styled(Link)`
+  height: 100%;
+  width: 70px;
+  max-width: 100%;
+  padding: 1rem 2.5rem;
+
+  @media screen and (max-width: 800px) {
+    padding: 0;
+  }
+
+  @media screen and (max-width: 600px) {
+    justify-self: start;
+    padding: 4.4rem 0 0 3rem;
   }
 `;

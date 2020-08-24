@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
+import Hero from '../../components/hero/hero.component';
+
 export const CheckoutPageContainer = styled.div`
-  width: 55%;
+  width: 75%;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px auto 0;
+  margin: 12rem auto 0;
+  color: var(--color-primary);
+
   button {
     margin-left: auto;
     margin-top: 50px;
@@ -19,23 +23,14 @@ export const CheckoutPageContainer = styled.div`
 export const CheckoutHeaderContainer = styled.div`
   width: 100%;
   height: 40px;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid darkgrey;
+  display: grid;
+  grid-template-columns: 18fr 44fr 15fr 15fr 8fr;
+  justify-items: center;
+  border-bottom: 1px solid var(--color-primary);
 `;
 
 export const HeaderBlockContainer = styled.div`
   text-transform: capitalize;
-  width: 23%;
-  &:last-child {
-    width: 8%;
-  }
-  @media screen and (max-width: 800px) {
-    width: 22%;
-    &:last-child {
-      width: 12%;
-    }
-  }
 `;
 
 export const TotalContainer = styled.div`
@@ -49,4 +44,8 @@ export const WarningContainer = styled.div`
   margin-top: 40px;
   font-size: 24px;
   color: red;
+`;
+
+export const HeroContainer = styled(Hero)`
+  max-height: 35rem;
 `;

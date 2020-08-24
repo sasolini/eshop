@@ -4,6 +4,7 @@ import {
   BoxServiceContainer,
   IconContainer,
   Title,
+  Text,
 } from './box-service.styles';
 
 const BoxService = props => {
@@ -14,7 +15,7 @@ const BoxService = props => {
         <Icon />
       </IconContainer>
       <Title>{title}</Title>
-      <p>{children}</p>
+      <Text>{children}</Text>
     </BoxServiceContainer>
   );
 };

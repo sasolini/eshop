@@ -1,20 +1,34 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import CustomButton from '../../components/custom-button/custom-button.component';
 
-import heroImg from '../../assets/coffee_hero.jpg';
+import { HeroContainer, ImageContainer } from './hero.styles';
 
-import { HeroContainer } from './hero.styles';
-
-const Hero = () => (
-  <HeroContainer>
+const Hero = ({
+  title,
+  subTitle,
+  button,
+  bgImage,
+  history,
+  match,
+  linkUrl,
+  className,
+}) => (
+  <HeroContainer className={className}>
     <div>
-      <h3>Start A Day With Coffee</h3>
-      <p>Here to bring your lifestyle to the next level.</p>
-      <CustomButton inverted>Shop here</CustomButton>
+      <h3>{title}</h3>
+      <p>{subTitle}</p>
+      {button ? (
+        <CustomButton onClick={() => history.push(`${match.url}${linkUrl}`)}>
+          {button}
+        </CustomButton>
+      ) : null}
     </div>
-    <img src={heroImg} alt='' />
+    <ImageContainer>
+      <img src={bgImage} alt='' />
+    </ImageContainer>
   </HeroContainer>
 );
 
-export default Hero;
+export default withRouter(Hero);
