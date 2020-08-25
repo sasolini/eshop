@@ -8,8 +8,12 @@ export const CheckoutPageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 12rem auto 0;
+  margin: 4rem auto 0;
   color: var(--color-primary);
+
+  @media screen and (max-width: 425px) {
+    margin: 0rem auto 0;
+  }
 
   button {
     margin-left: auto;
@@ -27,6 +31,10 @@ export const CheckoutHeaderContainer = styled.div`
   grid-template-columns: 18fr 44fr 15fr 15fr 8fr;
   justify-items: center;
   border-bottom: 1px solid var(--color-primary);
+
+  @media screen and (max-width: 425px) {
+    display: none;
+  }
 `;
 
 export const HeaderBlockContainer = styled.div`
@@ -41,11 +49,26 @@ export const TotalContainer = styled.div`
 
 export const WarningContainer = styled.div`
   text-align: center;
-  margin-top: 40px;
-  font-size: 24px;
+  margin-top: 4rem;
+  font-size: 2.4rem;
   color: red;
+
+  @media screen and (max-width: 425px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const HeroContainer = styled(Hero)`
   max-height: 35rem;
+
+  & > div:first-child {
+    left: 0;
+    top: 15rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 425px) {
+    max-height: 30rem;
+  }
 `;

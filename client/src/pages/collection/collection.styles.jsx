@@ -9,7 +9,7 @@ export const CollectionPageContainer = styled.div`
     }
 
     & > div {
-      top: 13rem;
+      top: 15rem;
       left: 0;
       width: 100%;
       text-align: center;
