@@ -1,26 +1,22 @@
 import React from 'react';
 
-// import NavOptions from '../nav-options/nav-options.component';
+import MainNav from '../main-nav/main-nav.component';
 
-// import imgFlowers from '../../assets/flowers.svg';
-import { ReactComponent as Logo } from '../../assets/logo.svg';
-
-import './side-drawer.styles.scss';
+import {
+  SideDrawerContainer,
+  CloseBtn,
+  LogoContainer,
+} from './side-drawer.styles';
 
 const SideDrawer = props => {
   const { clicked } = props;
 
   return (
-    <div id='side-drawer-menu' className='side-drawer'>
-      <button onClick={clicked} className='close-btn'>
-        &#10005;
-      </button>
-      {/* <NavOptions /> */}
-      {/* <div className='image-container'>
-        <img src={imgFlowers} alt='' />
-      </div> */}
-      <Logo />
-    </div>
+    <SideDrawerContainer id='side-drawer-menu'>
+      <CloseBtn onClick={clicked}>&#10005;</CloseBtn>
+      <MainNav />
+      <LogoContainer />
+    </SideDrawerContainer>
   );
 };
 

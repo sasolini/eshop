@@ -2,36 +2,18 @@ import React, { createRef, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import HamburgerBtn from '../hamburger-btn/hamburger-btn.component';
+import MainNav from '../main-nav/main-nav.component';
 import SideDrawer from '../side-drawer/side-drawer.component';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { signOutStart } from '../../redux/user/user.actions';
 
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 
-import {
-  HeaderContainer,
-  LogoContainer,
-  OptionsContainer,
-  OptionLink,
-  HamburgerBtnContainer,
-} from './header.styles';
+import { HeaderContainer, LogoContainer } from './header.styles';
 
-const signInSignOutLink = (currentUser, action) => {
-  return currentUser ? (
-    <OptionLink as='div' onClick={action}>
-      sign out
-    </OptionLink>
-  ) : (
-    <OptionLink to='/signin'>sign in</OptionLink>
-  );
-};
-
-const Header = ({ currentUser, hidden, signOutStart }) => {
+const Header = ({ hidden }) => {
   const [isSticky, setIsSticky] = useState(false);
 
   const ref = createRef();
@@ -51,7 +33,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
     };
   }, [ref]);
 
-  const eventHandler = event => {
+  const eventHandler = () => {
     const sideNav = document.getElementById('side-drawer-menu');
     sideNav.classList.toggle('open');
   };
@@ -62,12 +44,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
       <LogoContainer to='/'>
         <Logo />
       </LogoContainer>
-      <OptionsContainer>
-        <OptionLink to='/shop'>shop</OptionLink>
-        {/* <OptionLink to='/contact'>contact</OptionLink> */}
-        {signInSignOutLink(currentUser, signOutStart)}
-        <CartIcon />
-      </OptionsContainer>
+      <MainNav />
       {hidden ? null : <CartDropdown />}
       <SideDrawer clicked={eventHandler} />
     </HeaderContainer>
@@ -75,12 +52,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser,
   hidden: selectCartHidden,
 });
 
-const mapDispatchToProps = dispatch => ({
-  signOutStart: () => dispatch(signOutStart()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);
