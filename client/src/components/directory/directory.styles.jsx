@@ -12,12 +12,22 @@ export const DirectoryMenuContainer = styled.div`
     grid-template-rows: repeat(2, 25rem);
   }
 
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 20rem);
+  }
+
   & div:first-child {
     grid-row: 1 / span 2;
 
     @media screen and (max-width: 800px) {
       grid-row: 1 / span 1;
       grid-column: 1 / span 2;
+    }
+
+    @media screen and (max-width: 425px) {
+      grid-row: unset;
+      grid-column: unset;
     }
   }
 
@@ -27,6 +37,11 @@ export const DirectoryMenuContainer = styled.div`
     @media screen and (max-width: 800px) {
       grid-column: unset;
       grid-row: 2 / span 1;
+    }
+
+    @media screen and (max-width: 425px) {
+      grid-column: unset;
+      grid-row: unset;
     }
   }
 `;

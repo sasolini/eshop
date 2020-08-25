@@ -36,11 +36,18 @@ export const HeaderContainer = styled.header`
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  /* width: 70px; */
   padding: 1rem 2.5rem;
 
   @media screen and (max-width: 500px) {
     padding: 1rem 0.5rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    width: 60%;
+    text-align: center;
+    svg {
+      width: 16rem;
+    }
   }
 `;
 

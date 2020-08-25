@@ -17,9 +17,22 @@ export const FooterContainer = styled.footer`
     height: unset;
   }
 
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
+    justify-items: center;
+    height: unset;
+    text-align: center;
+  }
+
   hr {
-    width: 30%;
+    width: 60%;
     margin: 1rem 0;
+
+    @media screen and (max-width: 425px) {
+      width: 4rem;
+      margin: 1rem auto;
+    }
   }
 `;
 
@@ -51,12 +64,15 @@ export const LogoContainer = styled(Link)`
   max-width: 100%;
   padding: 1rem 2.5rem;
 
-  @media screen and (max-width: 800px) {
-    padding: 0;
-  }
-
   @media screen and (max-width: 600px) {
     justify-self: start;
     padding: 4.4rem 0 0 3rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    justify-self: center;
+    padding: 0;
+    transform: translate(-65px, 0);
+    grid-row: 4;
   }
 `;

@@ -6,6 +6,10 @@ export const HeroContainer = styled.div`
   width: 100vw;
   max-width: 1200px;
 
+  @media screen and (max-width: 425px) {
+    max-height: 35rem;
+  }
+
   & div:first-child {
     position: absolute;
     top: 18rem;
@@ -21,8 +25,15 @@ export const HeroContainer = styled.div`
 
     @media screen and (max-width: 600px) {
       top: 12rem;
-      left: 4rem;
+      left: 3rem;
       font-size: 3rem;
+    }
+
+    @media screen and (max-width: 425px) {
+      top: 11rem;
+      left: 1rem;
+      font-size: 2.8rem;
+      text-align: center;
     }
 
     p {
@@ -33,13 +44,22 @@ export const HeroContainer = styled.div`
         font-size: 2rem;
       }
 
+      @media screen and (max-width: 600px) {
+        font-size: 1.8rem;
+      }
+
       @media screen and (max-width: 425px) {
-        font-size: 1.6rem;
+        display: none;
       }
     }
 
     button {
+      display: inline-block;
       font-family: inherit;
+
+      @media screen and (max-width: 425px) {
+        margin-top: 2rem;
+      }
     }
   }
 `;
@@ -53,6 +73,11 @@ export const ImageContainer = styled.div`
 
     @media screen and (max-width: 600px) {
       min-width: 100%;
+      min-height: 30rem;
+    }
+
+    @media screen and (max-width: 425px) {
+      min-width: 130%;
       min-height: 30rem;
     }
   }

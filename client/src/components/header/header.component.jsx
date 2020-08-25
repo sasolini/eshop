@@ -52,7 +52,6 @@ const Header = ({ currentUser, hidden, signOutStart }) => {
   }, [ref]);
 
   const eventHandler = event => {
-    console.log('HIT');
     const sideNav = document.getElementById('side-drawer-menu');
     sideNav.classList.toggle('open');
   };

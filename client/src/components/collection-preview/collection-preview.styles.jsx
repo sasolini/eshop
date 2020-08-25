@@ -11,13 +11,17 @@ export const CollectionPreviewContainer = styled.div`
   }
 `;
 
-export const TitleContainer = styled.h1`
-  font-size: 28px;
+export const TitleContainer = styled.h2`
+  font-size: 2.8rem;
   margin-bottom: 25px;
   color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
-
   cursor: pointer;
+
+  @media screen and (max-width: 425px) {
+    font-size: 3.5rem;
+  }
+
   &:hover {
     color: var(--color-primary-light);
   }
@@ -26,10 +30,26 @@ export const TitleContainer = styled.h1`
 export const PreviewContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1.5rem;
+  grid-gap: 5rem;
   width: 100%;
 
   @media screen and (max-width: 800px) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 425px) {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+
+  @media screen and (max-width: 425px) {
+    & > div {
+      text-align: center;
+    }
+
+    & > div:not(:last-child) {
+      border-bottom: 1px solid var(--color-primary);
+      padding-bottom: 3rem;
+    }
   }
 `;
