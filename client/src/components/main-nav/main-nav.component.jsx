@@ -22,6 +22,7 @@ const MainNav = ({ currentUser, signOutStart }) => {
 
   return (
     <OptionsContainer>
+      <OptionLink to='/'>home</OptionLink>
       <OptionLink to='/shop'>shop</OptionLink>
       {/* <OptionLink to='/contact'>contact</OptionLink> */}
       {signInSignOutLink(currentUser, signOutStart)}

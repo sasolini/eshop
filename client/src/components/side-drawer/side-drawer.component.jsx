@@ -4,8 +4,10 @@ import MainNav from '../main-nav/main-nav.component';
 
 import {
   SideDrawerContainer,
+  SideDrawerMenu,
   CloseBtn,
   LogoContainer,
+  BackDrop,
 } from './side-drawer.styles';
 
 const SideDrawer = props => {
@@ -13,9 +15,12 @@ const SideDrawer = props => {
 
   return (
     <SideDrawerContainer id='side-drawer-menu'>
-      <CloseBtn onClick={clicked}>&#10005;</CloseBtn>
-      <MainNav />
-      <LogoContainer />
+      <BackDrop onClick={clicked} />
+      <SideDrawerMenu>
+        <CloseBtn onClick={clicked}>&#10005;</CloseBtn>
+        <MainNav />
+        <LogoContainer />
+      </SideDrawerMenu>
     </SideDrawerContainer>
   );
 };

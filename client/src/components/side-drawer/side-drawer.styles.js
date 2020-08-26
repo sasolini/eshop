@@ -6,21 +6,26 @@ export const SideDrawerContainer = styled.div`
   position: absolute;
   top: 0;
   right: 0;
-  height: 100vh;
+  height: 101vh;
   width: 0;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--color-primary);
-  padding-top: 6rem;
-  z-index: 100;
+  z-index: 1000;
   transition: 300ms ease all;
 
   &.open {
     width: 100vw;
   }
+`;
+
+export const SideDrawerMenu = styled.div`
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
 
   nav {
     @media only screen and (max-width: 500px) {
@@ -29,6 +34,7 @@ export const SideDrawerContainer = styled.div`
       width: 100%;
       height: auto;
       padding: 1rem 1rem;
+      margin: 7rem;
 
       a {
         display: inline-block;
@@ -67,6 +73,7 @@ export const CloseBtn = styled.button`
   color: white;
   padding: 2rem;
   cursor: pointer;
+  justify-self: end;
 
   &:hover {
     // color: var(--color-secondary);
@@ -75,4 +82,10 @@ export const CloseBtn = styled.button`
 
 export const LogoContainer = styled(Logo)`
   margin-bottom: 8rem;
+`;
+
+export const BackDrop = styled.div`
+  width: 30%;
+  height: 100%;
+  background-color: hsl(0 0% 0% / 0.33);
 `;
