@@ -1,6 +1,6 @@
 {
-  "short_name": "SH-Shop",
-  "name": "SH-Shop by Sasho",
+  "short_name": "Dark Brew",
+  "name": "Dark Brew by Sasho",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,14 +8,9 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "logo_beans.svg",
       "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "192x192 512x512"
     }
   ],
   "start_url": ".",
